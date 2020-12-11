@@ -20,8 +20,6 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 ## Purpose
 
-***This project is not complete yet.  Do not use.***
-
 This is a simple program that allows you to enter a command that
 requires a password without leaving a record of that password in hour
 history file.
