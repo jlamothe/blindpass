@@ -20,7 +20,16 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 module Main where
 
+import BlindPass
+
 main :: IO ()
-main = undefined
+main = do
+  pass1 <- getPassword "Enter password: "
+  pass2 <- getPassword "Confirm password: "
+  checkPasswords pass1 pass2 noMatch putStr
+  where
+    noMatch = do
+      output "Passwords do not match.\n"
+      main
 
 --jl

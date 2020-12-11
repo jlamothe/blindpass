@@ -23,6 +23,39 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 -}
 
-module BlindPass where
+module BlindPass (
+  getPassword,
+  checkPasswords,
+  output,
+) where
+
+-- | Prompts the user for a password without echoing to the screen
+getPassword
+  :: String
+  -- ^ The prompt to present to the user
+  -> IO String
+  -- ^ The user's response
+getPassword = undefined
+
+-- | Checks the passwords entered by the user
+checkPasswords
+  :: String
+  -- ^ The first password
+  -> String
+  -- ^ The second password
+  -> IO a
+  -- ^ Action to perform if the passwords don't match
+  -> (String -> IO a)
+  -- ^ Action to perform if the passwords match (takes the password as
+  -- an input)
+  -> IO a
+checkPasswords = undefined
+
+-- | Outputs text to standard error
+output
+  :: String
+  -- ^ The text to be output
+  -> IO ()
+output = undefined
 
 --jl
