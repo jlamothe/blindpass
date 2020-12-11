@@ -42,6 +42,7 @@ getPassword pStr = do
   hSetEcho stdin False
   output pStr
   input <- getLine
+  output "\n"
   hSetEcho stdin echoMode
   return input
 
