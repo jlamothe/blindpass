@@ -29,13 +29,21 @@ module BlindPass (
   output,
 ) where
 
+import System.IO (stderr, stdin, hFlush, hGetEcho, hPutStr, hSetEcho)
+
 -- | Prompts the user for a password without echoing to the screen
 getPassword
   :: String
   -- ^ The prompt to present to the user
   -> IO String
   -- ^ The user's response
-getPassword = undefined
+getPassword pStr = do
+  echoMode <- hGetEcho stdin
+  hSetEcho stdin False
+  output pStr
+  input <- getLine
+  hSetEcho stdin echoMode
+  return input
 
 -- | Checks the passwords entered by the user
 checkPasswords
@@ -56,6 +64,8 @@ output
   :: String
   -- ^ The text to be output
   -> IO ()
-output = undefined
+output str = do
+  hPutStr stderr str
+  hFlush stderr
 
 --jl
