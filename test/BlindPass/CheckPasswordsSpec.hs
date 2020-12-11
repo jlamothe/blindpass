@@ -18,13 +18,28 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 -}
 
-module Main where
+module BlindPass.CheckPasswordsSpec (spec) where
 
-import Test.Hspec (hspec)
+import Test.Hspec (Spec, context, describe, it, shouldReturn)
 
-import qualified BlindPassSpec as BlindPass
+import BlindPass
 
-main :: IO ()
-main = hspec BlindPass.spec
+spec :: Spec
+spec = describe "checkPasswords" $ mapM_
+  ( \(label, pass1, pass2, expected) -> do
+    context label $ let
+      result = checkPasswords pass1 pass2 onFail onPass
+      in it ("should be " ++ show expected) $
+        result `shouldReturn` expected
+  )
+
+  --  label,      password 1, password 2, expected result
+  [ ( "no match", "foo",      "bar",      Nothing         )
+  , ( "match",    "foo",      "foo",      Just "foo"      )
+  ]
+
+  where
+    onFail = return Nothing
+    onPass = return . Just
 
 --jl

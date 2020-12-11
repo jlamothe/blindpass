@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: b1ed137763a0a64354ad70b60538676377db71146658d0ae2e967460c1247bb8
+-- hash: 69d729e3855225f4a9e6659848a0d2b436356806093fdf71a10baf3b8f39fad3
 
 name:           blindpass
 version:        0.0.0
@@ -55,6 +55,8 @@ test-suite blindpass-test
   type: exitcode-stdio-1.0
   main-is: Spec.hs
   other-modules:
+      BlindPass.CheckPasswordsSpec
+      BlindPassSpec
       Paths_blindpass
   hs-source-dirs:
       test

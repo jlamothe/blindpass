@@ -58,7 +58,9 @@ checkPasswords
   -- ^ Action to perform if the passwords match (takes the password as
   -- an input)
   -> IO a
-checkPasswords = undefined
+checkPasswords pass1 pass2 onFail onPass
+  | pass1 == pass2 = onPass pass1
+  | otherwise      = onFail
 
 -- | Outputs text to standard error
 output

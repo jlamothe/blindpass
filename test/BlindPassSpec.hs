@@ -18,13 +18,13 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 -}
 
-module Main where
+module BlindPassSpec (spec) where
 
-import Test.Hspec (hspec)
+import Test.Hspec (Spec, describe)
 
-import qualified BlindPassSpec as BlindPass
+import qualified BlindPass.CheckPasswordsSpec as CheckPasswords
 
-main :: IO ()
-main = hspec BlindPass.spec
+spec :: Spec
+spec = describe "BlindPass" CheckPasswords.spec
 
 --jl
