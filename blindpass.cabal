@@ -4,10 +4,10 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 69d729e3855225f4a9e6659848a0d2b436356806093fdf71a10baf3b8f39fad3
+-- hash: a4e624ee98db08de739f110fff8dcb7d28718a4683bfaac07380ea7634a98221
 
 name:           blindpass
-version:        0.0.0
+version:        0.1.0
 synopsis:       Password entry tool
 description:    Please see the README on GitHub at <https://github.com/jlamothe/blindpass#readme>
 category:       Utilities
