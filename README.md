@@ -40,5 +40,6 @@ somecommand `blindpass`
 
 You will then be prompted twice for a password (whithout echoing to
 the screen).  If the passwords match, the password will be passed to
-your command as though it had been entered from the command line.  No
-record of this password will be kept anywhere.
+your command as though it had been entered from the command line.  If
+the passwords do not match, you will be prompted again.  No record of
+this password will be kept anywhere.
