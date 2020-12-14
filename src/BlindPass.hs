@@ -52,12 +52,12 @@ checkPasswords
   -- ^ The first password
   -> String
   -- ^ The second password
-  -> IO a
+  -> a
   -- ^ Action to perform if the passwords don't match
-  -> (String -> IO a)
+  -> (String -> a)
   -- ^ Action to perform if the passwords match (takes the password as
   -- an input)
-  -> IO a
+  -> a
 checkPasswords pass1 pass2 onFail onPass
   | pass1 == pass2 = onPass pass1
   | otherwise      = onFail

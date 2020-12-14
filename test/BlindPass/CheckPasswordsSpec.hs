@@ -20,7 +20,7 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 module BlindPass.CheckPasswordsSpec (spec) where
 
-import Test.Hspec (Spec, context, describe, it, shouldReturn)
+import Test.Hspec (Spec, context, describe, it, shouldBe)
 
 import BlindPass
 
@@ -30,7 +30,7 @@ spec = describe "checkPasswords" $ mapM_
     context label $ let
       result = checkPasswords pass1 pass2 onFail onPass
       in it ("should be " ++ show expected) $
-        result `shouldReturn` expected
+        result `shouldBe` expected
   )
 
   --  label,      password 1, password 2, expected result
@@ -39,7 +39,7 @@ spec = describe "checkPasswords" $ mapM_
   ]
 
   where
-    onFail = return Nothing
-    onPass = return . Just
+    onFail = Nothing
+    onPass = Just
 
 --jl
